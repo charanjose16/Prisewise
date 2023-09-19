@@ -33,16 +33,18 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h2>Signup</h2>
+   
+     <div className='signupbox'>
+      <img src="logo.png" alt="" width="300" height="280"></img>
+      <h2 className='signup'>SIGN UP</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="username">Username</label>
           <input
             type="text"
             className="form-control"
             id="username"
             name="username"
+            placeholder='USERNAME'
             value={username}
             onChange={handleChange}
             required
@@ -50,19 +52,20 @@ const Signup = () => {
         </div>
   
         <div className="form-group">
-          <label htmlFor="password">Password</label>
+         
           <input
             type="password"
             className="form-control"
             id="password"
             name="password"
+            placeholder='PASSWORD'
             value={password}
             onChange={handleChange}
             required
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Signup
+          SIGNUP
         </button>
       </form>
     </div>

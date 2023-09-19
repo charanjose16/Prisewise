@@ -22,6 +22,7 @@ button{
     justify-content: center;
     align-items: center;
     width: 435px;
+    
   }
   img{
     margin-left: 70px;
@@ -36,4 +37,26 @@ h6{
 }
 h1,span{
   color: rgb(244, 161, 8);
+}
+.signup{
+  text-align: center;
+}
+.signupbox{
+  margin-top: 40px;
+}
+.btn-primary{
+  background-color:rgb(252, 118, 0);
+  border-color: rgb(252, 118, 0);
+  transition-duration: 0.3s;
+}
+h2{
+  color: rgb(252, 118, 0);
+  transition-duration: 0.3s;
+}
+h2:hover{
+  color: rgb(254, 173, 0);
+}
+.btn-primary:hover{
+  background-color: rgb(254, 173, 0);
+  border-color:rgb(243, 197, 32) ;
 }
