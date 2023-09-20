@@ -35,7 +35,10 @@ const Signup = () => {
   return (
    
      <div className='signupbox'>
-      <img src="logo.png" alt="" width="300" height="280"></img>
+     <div className='logobox'>
+      <img src="logo.png" alt="" width="120" height="160"></img>
+      <h3>PriceWise</h3>
+     </div>
       <h2 className='signup'>SIGN UP</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">

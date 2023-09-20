@@ -25,7 +25,7 @@ button{
     
   }
   img{
-    margin-left: 70px;
+    margin-left: 158px;
   }
 :placeholder-shown{
   text-align: center;
@@ -59,4 +59,13 @@ h2:hover{
 .btn-primary:hover{
   background-color: rgb(254, 173, 0);
   border-color:rgb(243, 197, 32) ;
+}
+h3{
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgba(0, 0, 0, 0.732);
+  font-family: 'Kaushan Script';font-size: 22px;
+}
+.logobox{
+  margin-bottom: 60px;
 }
