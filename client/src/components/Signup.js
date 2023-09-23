@@ -67,8 +67,8 @@ const Signup = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary">
-          SIGNUP
+        <button type="submit" className="btn btn-primary log-sign-button">
+           SIGNUP
         </button>
       </form>
     </div>

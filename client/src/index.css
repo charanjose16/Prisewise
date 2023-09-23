@@ -17,7 +17,7 @@ body {
 h1{
   text-align: center;
 }
-button{
+.log-sign-button{
   margin-top: 10px;
     justify-content: center;
     align-items: center;
@@ -71,4 +71,11 @@ h3{
 }
 .login{
       text-align: center;
+}
+.search-button{
+  height: 36px;
+  left: 6px;
+}
+input#form1.form-control{
+  width: 300px;
 }
