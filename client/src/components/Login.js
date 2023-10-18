@@ -1,8 +1,11 @@
-// components/Login.js
 import React, { useState } from 'react';
+import './Login.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -10,32 +13,27 @@ const Login = () => {
 
   const { username, password } = formData;
 
+  // Define a function to handle changes in the form inputs
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const handleSubmit = async (e) => {
+  // Define a function to handle form submission
+  const handleSubmit = (e) => {
     e.preventDefault();
+    // Here, you can add code to handle form submission, such as making an API request to validate the user.
 
-    try {
-      // Make a POST request to your server's login endpoint
-      const response = await axios.post('http://localhost:5000/login', {
-        username,
-        password,
-      });
-
-      // Handle success, display a success message, or redirect the user
-      console.log('User logged in successfully:', response.data);
-    } catch (error) {
-      // Handle errors, such as displaying error messages to the user
-      console.error('Error logging in:', error.response.data);
-    }
+    // After successful login, redirect to the "home.js" page
+    navigate('/Home');
   };
 
   return (
-    <div className='loginbox'>
+    <div>
       <div className='logobox'>
-        <img src="logo.png" alt="" width="120" height="160" />
+        <img className="logoimg" src="logo.png" alt="" width="120" height="160" />
         <h3>PriceWise</h3>
       </div>
       <h2 className='login'>LOGIN</h2>

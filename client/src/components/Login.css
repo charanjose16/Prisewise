@@ -1,0 +1,85 @@
+body{
+    background-color: rgba(246, 210, 111, 0.444);
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .log-sign-button {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 435px;
+  }
+  
+  .logoimg {
+    margin-left: 158px;
+  }
+  
+  h6 {
+    padding-top: 5px;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.662);
+  }
+  
+  h1,
+  span {
+    color: rgb(244, 161, 8);
+  }
+  
+  .btn-primary {
+    background-color: rgb(252, 118, 0);
+    border-color: rgb(252, 118, 0);
+    transition-duration: 0.3s;
+  }
+  
+  h2 {
+    color: rgb(252, 118, 0)!important;
+    transition-duration: 0.3s;
+  }
+  
+  h2:hover {
+    color: rgb(254, 173, 0);
+  }
+  
+  .btn-primary:hover {
+    background-color: rgb(254, 173, 0);
+    border-color: rgb(243, 197, 32);
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgba(0, 0, 0, 0.732);
+    font-family: 'Kaushan Script';
+    font-size: 22px;
+  }
+  
+  .logobox {
+    margin-bottom: 60px;
+    padding: 50px 550px;
+
+  }
+  
+  .login {
+    text-align: center;
+  }
+  
+  .form-group {
+    justify-content: center;
+    text-align: center;
+    width: 600px;
+    
+  }
+div.form-group{
+  margin-left: 470px;
+ 
+}
+button.btn.btn-primary.log-sign-button{
+  margin-left: 470px;
+  width:600px;
+
+}

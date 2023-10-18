@@ -1,7 +1,7 @@
 // components/Signup.js
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './Signup.css';
 const Signup = () => {
   const [formData, setFormData] = useState({
     username: '',
@@ -26,6 +26,7 @@ const Signup = () => {
 
       // Handle success, display a success message, or redirect the user
       console.log('User registered successfully:', response.data);
+      window.location='/login';
     } catch (error) {
       // Handle errors, such as displaying error messages to the user
       console.error('Error registering user:', error.response.data);
@@ -36,7 +37,7 @@ const Signup = () => {
    
      <div className='signupbox'>
      <div className='logobox'>
-      <img src="logo.png" alt="" width="120" height="160"></img>
+      <img className="logoimg" src="logo.png" alt="" width="120" height="160"></img>
       <h3>PriceWise</h3>
      </div>
       <h2 className='signup'>SIGN UP</h2>
@@ -72,6 +73,7 @@ const Signup = () => {
         </button>
       </form>
     </div>
+   
   );
 };
 

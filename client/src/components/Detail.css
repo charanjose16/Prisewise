@@ -1,0 +1,85 @@
+img.main-img{
+    mix-blend-mode:multiply;
+    justify-content: center;
+}
+h3.title-text{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+}
+h4.bprice{
+    color: rgb(252, 118, 0);
+    
+}
+span.rate{
+    color: forestgreen;
+    padding-left: 10px;
+}
+div.text-center.price{
+        background-color: rgba(249, 157, 44, 0.175);
+        margin: 10px 640px;
+        align-items: center;
+        border-radius: 6px;
+        padding: 3px 3px;
+}
+img.amazon{
+    mix-blend-mode:multiply;
+    
+}
+img.flipkart{
+    margin-top: 16px;
+    
+}
+img.snapdeal{
+    margin-top: 10px;
+    
+}
+img.ebay{
+    margin-top: 10px;
+    
+}
+.row.brands.amazon{
+    margin-left: 280px;
+    
+}
+div.col-3.price-tabs{
+    background-color: rgba(249, 157, 44, 0.175);
+}
+div.row.brands{
+    column-gap: 10px;
+    
+}
+h4.brand-price{
+    text-align: center;
+    margin-top: 25px;
+    color: forestgreen;
+}
+.row.stars{
+    margin-left:58px;
+    margin-top: 25px;
+}
+div.row.brands.flip{
+    margin-left: 280px;
+    margin-top: 10px;
+    height: 80px; 
+}
+div.row.brands.snapdeal{
+    margin-top: 10px;
+    margin-left: 280px;
+    height: 80px;
+}
+div.row.brands.ebay{
+    margin-top: 10px;
+    margin-left: 280px;
+    height: 80px;
+}
+span.specs{
+    color: black;
+    font-weight: 630;
+}
+h4.phone-tit{
+    padding-bottom: 10px;
+}
+div.specification-block{
+    padding-left: 20px;
+}

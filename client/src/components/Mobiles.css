@@ -1,0 +1,30 @@
+div.row.stars.mobiles{
+    padding-left: 112px;
+}
+div.mob-tit{
+    background-color: rgba(249, 157, 44, 0.175); 
+    padding: 10px 0px;
+}
+h4.mob-tit{
+ text-align: center;
+ font-size:xx-large;
+
+}
+div.container-fluid.mobiles{
+    margin-top: 20px;
+}
+h4.title-text{
+    color: rgb(252, 118, 0);
+}
+hr.mobs-hr{
+    border:3px double rgb(252, 118, 0);
+}
+img.main-img.i14{
+    margin-left: 35px;
+}
+img.main-img.ixs{
+    margin-left: 35px;
+}
+img.main-img.fri1{
+    margin-left: 34px;
+}
