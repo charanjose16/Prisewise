@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Home.css';
-import { dummyData } from '../data/data';
 import { Link, useNavigate } from 'react-router-dom';
 import { getMobiles } from '../features/firebase/mobilesDB';
 

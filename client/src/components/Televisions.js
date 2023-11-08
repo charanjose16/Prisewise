@@ -1,7 +1,20 @@
 import React from 'react'
+import  { useEffect, useState } from 'react'
 import "./Laptops.css"
 import { Link } from 'react-router-dom';
+import { getTelevision } from '../features/firebase/televisionDB';
 const Televisions = () => {
+    const [television,setTelevision]=useState(null)
+  
+    const getTelevisionData = async() => {
+      const res = await getTelevision();
+      setTelevision(res)
+    }
+  
+    console.log(television)
+    useEffect(()=>{
+      getTelevisionData()
+    },[])
   return (
     <div>
     <div className="container-fluid">
@@ -11,21 +24,22 @@ const Televisions = () => {
       </div> 
     </div>
     <div className="container-fluid mobiles">
+    {television?.map(data => (
         <div className="row">
-          <Link to={'/teledetail'} className="col-4">
-          <img className="main-img lap1" src='tv1.png' width="285" height="200"  alt="Apple iPhone XR"/>
+          <Link to={'/detail'} state={data} className="col-4">
+          <img className="main-img lap1" src={data.image} width="285" height="200"  alt="Apple iPhone XR"/>
           </Link>
           <div className='col-4'>
-          <h4 className='title-text'>Mi Tv LED 50"</h4>
+          <h4 className='title-text'>{data.name}</h4>
           <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
+            <li>{data["1"]}</li>
+            <li>{data["2"]}</li>
+            <li>{data["3"]}</li>
+            <li>{data["4"]}</li>
           </ul>
           </div>
           <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
+          <h4 className='brand-price'>Rs.{data.best_price}</h4>
           <div className='row stars mobiles'>
            <div className='col-1'>
             <i class="fa fa-star"></i>
@@ -44,320 +58,10 @@ const Televisions = () => {
             </div>
             </div>
           </div>
+          <hr className='mobs-hr'></hr>
           </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='tv2.png' width="270" height="185" alt="Apple iPhone XS max"/>
+          ))}
           </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Mi Tv Amoled 43"</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14 tv3" src='tv3.png' width="280" height="195" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Mi Tv 4 43"</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <Link to={'/teledetail'} className="col-4">
-          <img className="main-img lap1" src='tv1.png' width="285" height="200"  alt="Apple iPhone XR"/>
-          </Link>
-          <div className='col-4'>
-          <h4 className='title-text'>Mi Tv LED 50"</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='tv2.png' width="270" height="185" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Mi Tv Amoled 43"</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14 tv3" src='tv3.png' width="280" height="195" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Mi Tv 4 43"</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <Link to={'/teledetail'} className="col-4">
-          <img className="main-img lap1" src='tv1.png' width="285" height="200"  alt="Apple iPhone XR"/>
-          </Link>
-          <div className='col-4'>
-          <h4 className='title-text'>Mi Tv LED 50"</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='tv2.png' width="270" height="185" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Mi Tv Amoled 43"</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14 tv3" src='tv3.png' width="280" height="195" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Mi Tv 4 43"</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
- 
        
     </div>
   )

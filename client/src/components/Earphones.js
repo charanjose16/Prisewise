@@ -1,7 +1,20 @@
 import React from 'react'
 import "./Mobiles.css"
+import  { useEffect, useState } from 'react'
+import { getEarphones } from '../features/firebase/earphonesDB';
 import { Link } from 'react-router-dom';
 const Earphones = () => {
+  const [earphones,setEarphones]=useState(null)
+  
+    const getEarphonesData = async() => {
+      const res = await getEarphones();
+      setEarphones(res)
+    }
+  
+    console.log(earphones)
+    useEffect(()=>{
+      getEarphonesData()
+    },[])
   return (
     <div>
     <div className="container-fluid">
@@ -11,21 +24,22 @@ const Earphones = () => {
       </div> 
     </div>
     <div className="container-fluid mobiles">
+    {earphones?.map(data => (
         <div className="row">
-          <Link to={'/eardetail'} className="col-4">
-          <img className="main-img fri1 " src='e1.png' width="150" height="200"  alt="Apple iPhone XR" />
+          <Link to={'/detail'} state={data} className="col-4">
+          <img className="main-img fri1 " src={data.image} width="150" height="200"  alt="Apple iPhone XR" />
           </Link>
           <div className='col-4'>
-          <h4 className='title-text'>Beats Solo 2</h4>
+          <h4 className='title-text'>{data.name}</h4>
           <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
+            <li>{data["1"]}</li>
+            <li>{data["2"]}</li>
+            <li>{data["3"]}</li>
+            <li>{data["4"]}</li>
           </ul>
           </div>
           <div className='col-4'>
-          <h4 className='brand-price'>Rs.15,400</h4>
+          <h4 className='brand-price'>Rs.{data.best_price}</h4>
           <div className='row stars mobiles'>
            <div className='col-1'>
             <i class="fa fa-star"></i>
@@ -43,325 +57,12 @@ const Earphones = () => {
             <i class="fa fa-star"></i>
             </div>
             </div>
-          </div>
-          </div>
           </div><hr className='mobs-hr'></hr>
+          </div>
+          ))}
+          </div>
 
 
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='e2.png' width="150" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Bose Quietcomfort 35</h4>
-          <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.5,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='e3.png' width="150" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>CR Bass Boosted Headphones</h4>
-          <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.3,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <Link to={'/eardetail'} className="col-4">
-          <img className="main-img fri1 " src='e1.png' width="150" height="200"  alt="Apple iPhone XR" />
-          </Link>
-          <div className='col-4'>
-          <h4 className='title-text'>Beats Solo 2</h4>
-          <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.15,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='e2.png' width="150" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Bose Quietcomfort 35</h4>
-          <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.5,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='e3.png' width="150" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>CR Bass Boosted Headphones</h4>
-          <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.3,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <Link to={'/eardetail'} className="col-4">
-          <img className="main-img fri1 " src='e1.png' width="150" height="200"  alt="Apple iPhone XR" />
-          </Link>
-          <div className='col-4'>
-          <h4 className='title-text'>Beats Solo 2</h4>
-          <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.15,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='e2.png' width="150" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Bose Quietcomfort 35</h4>
-          <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.5,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='e3.png' width="150" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>CR Bass Boosted Headphones</h4>
-          <ul type="circle">
-            <li>Wireless headphones</li>
-            <li>Original beats</li>
-            <li>Genuine Beats Audio Solo2 wireless headphones</li>
-            <li>Amazing sound quality</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.3,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-
-          
-          
-
-
-          
        
     </div>
   )
