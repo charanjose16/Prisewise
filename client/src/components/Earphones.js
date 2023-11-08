@@ -27,7 +27,7 @@ const Earphones = () => {
     {earphones?.map(data => (
         <div className="row">
           <Link to={'/detail'} state={data} className="col-4">
-          <img className="main-img fri1 " src={data.image} width="150" height="200"  alt="Apple iPhone XR" />
+          <img className="main-img fri1 " src={data.image} width="150" height="200" style={{objectFit:"contain"}}   alt="Apple iPhone XR" />
           </Link>
           <div className='col-4'>
           <h4 className='title-text'>{data.name}</h4>
