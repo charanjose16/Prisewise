@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 const Televisions = () => {
   return (
     <div>
-    <div className='mob-tit'>
-      <h4 className='mob-tit'>Televisions</h4>
+    <div className="container-fluid">
+      <div className='row mob-tit'>
+      <Link to={'/home'} className="col-5"><i class="fa-solid fa-house fa-xl"></i></Link>
+        <div className='col-7'><h4 className='mob-tit mob'>TELEVISIONS</h4></div>
+      </div> 
     </div>
     <div className="container-fluid mobiles">
         <div className="row">

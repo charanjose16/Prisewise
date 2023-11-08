@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { loginWithEmailAndPassword } from '../api/api';
+import AuthContext from '../features/context/authContext';
 
 const Login = () => {
   const navigate = useNavigate();
+  const {setIsLoggedIn,setCurrentUser} =useContext(AuthContext);
+
 
   const [formData, setFormData] = useState({
-    username: '',
+    email: '',
     password: '',
   });
 
-  const { username, password } = formData;
+  const { email, password } = formData;
 
   // Define a function to handle changes in the form inputs
   const handleChange = (e) => {
@@ -22,12 +26,14 @@ const Login = () => {
   };
 
   // Define a function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here, you can add code to handle form submission, such as making an API request to validate the user.
-
-    // After successful login, redirect to the "home.js" page
-    navigate('/Home');
+    const res = await loginWithEmailAndPassword(email,password);
+    if(res.success){
+        setIsLoggedIn(true)
+        setCurrentUser(res.user)
+        navigate('/home');
+    }
   };
 
   return (
@@ -42,10 +48,10 @@ const Login = () => {
           <input
             type="text"
             className="form-control"
-            id="username"
-            name="username"
-            placeholder='USERNAME'
-            value={username}
+            id="email"
+            name="email"
+            placeholder='Email'
+            value={email}
             onChange={handleChange}
             required
           />

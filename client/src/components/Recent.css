@@ -1,0 +1,38 @@
+div.col-5.set{
+    background-color:  rgba(249, 157, 44, 0.295);
+    border-radius: 10px;
+    margin-left: 80px;
+    border-color: rgba(254, 132, 26, 0.729);
+    border-style: solid ;
+    border-width: 1px;
+   
+}
+img.recent-pic{
+    margin-top: 4px;
+    right: 100px;
+    mix-blend-mode:multiply;
+}
+p.recent-tag{
+    margin-top: 65px;
+    margin-left: 40px;
+    color: rgba(0, 0, 0, 0.677);
+}
+i.fa-regular.fa-clock.fa-xl{
+   margin-top: 78px;
+}
+li.cost{
+    color:green;
+}
+div.col-4.recent{
+    margin-top: 65px;
+}
+div.col-5.set.recent{
+    margin-top: 10px;
+}
+img.rec-lap{
+    margin-top: 10px;
+    mix-blend-mode: multiply;
+}
+li.rec-li{
+    color: black;
+}

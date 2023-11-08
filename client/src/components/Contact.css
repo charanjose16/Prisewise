@@ -1,0 +1,21 @@
+h5.cont-h5{
+    margin-left: 50px;
+    margin-top: 60px;
+}
+div.form-group.cont{
+    margin-top: 40px;
+}
+label.cont{
+    font-size:x-large;
+    font-weight:500;
+    color: rgba(254, 132, 26, 0.729);
+}
+button.btn.btn-primary.btn-lg.btn-block{
+    margin-left: 31.5%;
+    padding-left: 250px;
+    padding-right: 250px;
+    margin-top: 20px;
+}
+textarea#comment.form-control{
+    background-color: rgb(253, 244, 233);
+}

@@ -1,8 +1,10 @@
 import React from 'react'
 import "./Detail.css"
+import {Link} from 'react-router-dom';
 const Tabdetail = () => {
   return (
     <div>
+    <Link to={'/home'} className="col-6"><i class="fa-solid fa-house fa-xl det"></i></Link>
     <div className='text-center'>
     <img className="main-img" src='tab3.png' width="350" height="280" alt='laptop-img'/>
     </div>

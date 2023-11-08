@@ -1,12 +1,12 @@
 div.row.stars.mobiles{
     padding-left: 112px;
 }
-div.mob-tit{
+div.row.mob-tit{
     background-color: rgba(249, 157, 44, 0.175); 
     padding: 10px 0px;
 }
 h4.mob-tit{
- text-align: center;
+ text-align: left;
  font-size:xx-large;
 
 }
@@ -27,4 +27,7 @@ img.main-img.ixs{
 }
 img.main-img.fri1{
     margin-left: 34px;
+}
+i.fa-solid.fa-house.fa-xl{
+    margin-top: 20px;
 }

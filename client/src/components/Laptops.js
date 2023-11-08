@@ -1,28 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Laptops.css"
 import { Link } from 'react-router-dom';
+import { getLaptops } from '../features/firebase/laptopsDB';
 const Laptops = () => {
+  const [laptops,setLaptops]=useState(null)
+
+  const getLaptopsData = async() => {
+    const res = await getLaptops();
+    setLaptops(res)
+  }
+
+  console.log(laptops)
+  useEffect(()=>{
+    getLaptopsData()
+  },[])
+
   return (
     <div>
-    <div className='mob-tit'>
-      <h4 className='mob-tit'>Laptops</h4>
+   <div className="container-fluid">
+      <div className='row mob-tit'>
+      <Link to={'/home'} className="col-6"><i class="fa-solid fa-house fa-xl"></i></Link>
+        <div className='col-6'><h4 className='mob-tit mob'>LAPTOPS</h4></div>
+      </div> 
     </div>
     <div className="container-fluid mobiles">
+    {laptops?.map(data => (
+
         <div className="row">
-          <Link to={'/lapdetail'} className="col-4">
-          <img className="main-img lap1" src='lap1.png' width="285" height="200"  alt="Apple iPhone XR"/>
+          <Link to={'/detail'} state={data} className="col-4">
+          <img className="main-img lap1" src={data?.image} width="285" height="200" style={{objectFit:"contain"}}  alt="Apple iPhone XR"/>
           </Link>
           <div className='col-4'>
-          <h4 className='title-text'>HP i3 10th Gen 4GB</h4>
+          <h4 className='title-text'>{data?.name}</h4>
           <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
+            <li>{data["1"]}</li>
+            <li>{data['2']}</li>
+            <li>{data["3"]}</li>
+            <li>{data["4"]}</li>
           </ul>
           </div>
           <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
+          <h4 className='brand-price'>Rs.{data?.best_price}</h4>
           <div className='row stars mobiles'>
            <div className='col-1'>
             <i class="fa fa-star"></i>
@@ -41,318 +59,13 @@ const Laptops = () => {
             </div>
             </div>
           </div>
+          <hr className='mobs-hr'></hr>
           </div>
-          </div><hr className='mobs-hr'></hr>
+    ))}
+          </div>
 
 
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='lap2.png' width="270" height="185" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>HP ZBook Fury 16GB</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='lap3.png' width="260" height="195" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Aurabook Laptop 16GB</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <Link to={'/lapdetail'} className="col-4">
-          <img className="main-img lap1" src='lap1.png' width="285" height="200"  alt="Apple iPhone XR"/>
-          </Link>
-          <div className='col-4'>
-          <h4 className='title-text'>HP i3 10th Gen 4GB</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='lap2.png' width="270" height="185" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>HP ZBook Fury 16GB</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='lap3.png' width="260" height="195" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Aurabook Laptop 16GB</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <Link to={'/lapdetail'} className="col-4">
-          <img className="main-img lap1" src='lap1.png' width="285" height="200"  alt="Apple iPhone XR"/>
-          </Link>
-          <div className='col-4'>
-          <h4 className='title-text'>HP i3 10th Gen 4GB</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='lap2.png' width="270" height="185" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>HP ZBook Fury 16GB</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='lap3.png' width="260" height="195" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Aurabook Laptop 16GB</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
+          
 
 
           

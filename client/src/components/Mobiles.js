@@ -1,28 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Mobiles.css"
 import { Link } from 'react-router-dom';
+import { getMobiles } from '../features/firebase/mobilesDB';
 const Mobiles = () => {
+
+  const [mobiles,setMobiles]=useState(null)
+  const getMobilesData = async() => {
+    const res = await getMobiles();
+    setMobiles(res)
+  }
+
+  console.log(mobiles)
+  useEffect(()=>{
+    getMobilesData()
+  },[]) 
+  
   return (
     <div>
-    <div className='mob-tit'>
-      <h4 className='mob-tit'>Mobiles</h4>
+    <div className="container-fluid">
+      <div className='row mob-tit'>
+      <Link to={'/home'} className="col-6"><i class="fa-solid fa-house fa-xl"></i></Link>
+        <div className='col-6'><h4 className='mob-tit mob'>Mobiles</h4></div>
+      </div> 
     </div>
     <div className="container-fluid mobiles">
-        <div className="row">
-          <Link to={'/detail'} className="col-4">
-          <img className="main-img" src='https://i.imgur.com/Aj0L4Wa.jpg' width="200" height="200"  alt="Apple iPhone XR"/>
+        {mobiles?.map((data)=>(
+
+
+                 <div className="row">
+          <Link to="/detail" state={data} className="col-4">
+          <img className="main-img" src={data.image} width="200" height="200"  alt="Apple iPhone XR"/>
           </Link>
           <div className='col-4'>
-          <h4 className='title-text'>Apple iphone XR</h4>
+          <h4 className='title-text'>{data.name}</h4>
           <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
+            <li>{data["1"]}</li>
+            <li>{data["2"]}</li>
+            <li>{data["3"]}</li>
+            <li>{data["4"]}</li>
           </ul>
           </div>
           <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
+          <h4 className='brand-price'>Rs.{data.best_price}</h4>
           <div className='row stars mobiles'>
            <div className='col-1'>
             <i class="fa fa-star"></i>
@@ -41,316 +60,12 @@ const Mobiles = () => {
             </div>
             </div>
           </div>
+          <hr className='mobs-hr'></hr>
           </div>
-          </div><hr className='mobs-hr'></hr>
+        ))}
+          </div>
 
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='iphone-xs.jpg' width="130" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Apple iphone XS max</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='iphone-14.jpg' width="130" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Apple iphone 14 Pro</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img" src='https://i.imgur.com/Aj0L4Wa.jpg' width="200" height="200"  alt="Apple iPhone XR"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Apple iphone XR</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='iphone-xs.jpg' width="130" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Apple iphone XS max</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='iphone-14.jpg' width="130" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Apple iphone 14 Pro</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img" src='https://i.imgur.com/Aj0L4Wa.jpg' width="200" height="200"  alt="Apple iPhone XR"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Apple iphone XR</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.65,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img ixs" src='iphone-xs.jpg' width="130" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Apple iphone XS max</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,05,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-
-
-          <div className="container-fluid mobiles">
-        <div className="row">
-          <div className="col-4">
-          <img className="main-img i14" src='iphone-14.jpg' width="130" height="200" alt="Apple iPhone XS max"/>
-          </div>
-          <div className='col-4'>
-          <h4 className='title-text'>Apple iphone 14 Pro</h4>
-          <ul type="circle">
-            <li>128 GB ROM</li>
-            <li>15.49 cm (6.1 inch) Display 12MP Rear Camera</li>
-            <li>7MP Front Camera A12 Bionic Chip Processor</li>
-            <li>Gorilla Glass with high quality display</li>
-          </ul>
-          </div>
-          <div className='col-4'>
-          <h4 className='brand-price'>Rs.1,85,400</h4>
-          <div className='row stars mobiles'>
-           <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            <div className='col-1'>
-            <i class="fa fa-star"></i>
-            </div>
-            </div>
-          </div>
-          </div>
-          </div><hr className='mobs-hr'></hr>
-       
     </div>
-  )
-}
+  
+)}
 export default Mobiles

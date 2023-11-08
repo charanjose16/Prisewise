@@ -1,8 +1,10 @@
 import React from 'react'
 import "./Detail.css"
+import {Link} from 'react-router-dom';
 const Eardetail = () => {
   return (
     <div>
+    <Link to={'/home'} className="col-6"><i class="fa-solid fa-house fa-xl det"></i></Link>
     <div className='text-center'>
     <img className="main-img" src='e1.png' width="220" height="280" alt='laptop-img'/>
     </div>

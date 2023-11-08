@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Detail.css"
+import {Link, useLocation} from 'react-router-dom';
+
 const Detail = () => {
+  const [data,setData]=useState(null)
+  const location = useLocation()
+  console.log(location)
+
+  
+
+  useEffect(()=>{
+    setData(location.state)
+  },[location.state])
+
   return (
     <div>
+    <Link to={'/home'} className="col-6"><i class="fa-solid fa-house fa-xl det"></i></Link>
     <div className='text-center'>
-    <img className="main-img" src='https://i.imgur.com/Aj0L4Wa.jpg' width="300" height="300" />
+    <img className="main-img" src={data?.image} width="300" height="300" style={{objectFit:"contain"}} />
     </div>
-    <h3 className='title-text'>Apple iphone XR</h3>
+    <h3 className='title-text'>{data?.name}</h3>
     <div className='text-center price'>
-      <h4 className='bprice'>Best Price   <span className='rate'>  Rs.65499</span></h4>
+      <h4 className='bprice'>Best Price   <span className='rate'>  Rs.{data?.best_price}</span></h4>
     </div>
     <hr></hr>
     <div className="container-fluid">
@@ -17,7 +30,7 @@ const Detail = () => {
           <img className='amazon' src='amazon.jpg' width="80px" height="80px"/>
           </div>
           <div className='col-3 price-tabs'>
-           <h4 className='brand-price'>Rs.65,400</h4>
+           <h4 className='brand-price'>Rs.{data?.amazon}</h4>
           </div>
           
           <div className='col-3 price-tabs'>
@@ -51,7 +64,7 @@ const Detail = () => {
           <img className='flipkart' src='flipkart.png' width="75px" height="45px"/>
           </div>
           <div className='col-3 price-tabs'>
-           <h4 className='brand-price'>Rs.66,499</h4>
+           <h4 className='brand-price'>Rs.{data?.flipkart}</h4>
           </div>
           
           <div className='col-3 price-tabs'>
@@ -85,7 +98,7 @@ const Detail = () => {
           <img className='snapdeal' src='snapdeal.png' width="57px" height="57px"/>
           </div>
           <div className='col-3 price-tabs'>
-           <h4 className='brand-price'>Rs.67,199</h4>
+           <h4 className='brand-price'>Rs.{data?.snapdeal}</h4>
           </div>
           
           <div className='col-3 price-tabs'>
@@ -114,7 +127,7 @@ const Detail = () => {
           <img className='ebay' src='ebay.png' width="57px" height="57px"/>
           </div>
           <div className='col-3 price-tabs'>
-           <h4 className='brand-price'>Rs.70,000</h4>
+           <h4 className='brand-price'>Rs.{data?.ebay}</h4>
           </div>
           
           <div className='col-3 price-tabs'>
@@ -140,7 +153,7 @@ const Detail = () => {
 
       <hr></hr>
       <div className='specification-block'>
-      <h4 className='phone-tit'>Apple Iphone XR Specs</h4>
+      <h4 className='phone-tit'>{data?.name} Specs</h4>
 
       <h5><span>Design and Display</span></h5>
       <ul type="square">

@@ -1,14 +1,23 @@
 // components/Signup.js
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import './Signup.css';
+import { registerWithEmailAndPassword } from '../api/api';
+import AuthContext from '../features/context/authContext';
+import { useNavigate } from 'react-router-dom';
 const Signup = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
+    email: '',
+    phone: '',
   });
 
-  const { username,  password } = formData;
+  const navigate = useNavigate()
+
+  const {setIsLoggedIn,setCurrentUser} = useContext(AuthContext)
+
+  const { username, email,phone, password } = formData;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,19 +27,16 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      // Make a POST request to your server's user registration endpoint
-      const response = await axios.post('http://localhost:5000/signup', {
-        username,
-        password,
-      });
-
-      // Handle success, display a success message, or redirect the user
-      console.log('User registered successfully:', response.data);
-      window.location='/login';
-    } catch (error) {
-      // Handle errors, such as displaying error messages to the user
-      console.error('Error registering user:', error.response.data);
-    }
+      const res = await registerWithEmailAndPassword(formData);
+      if(res.success){
+          setCurrentUser(res.user)
+          setIsLoggedIn(true)
+          navigate('/login')
+          console.log(res.user)
+      }
+  } catch (error) {
+      console.error(error.message)
+  }
   };
 
   return (
@@ -50,6 +56,33 @@ const Signup = () => {
             name="username"
             placeholder='USERNAME'
             value={username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            id="phone"
+            name="phone"
+            placeholder='PHONE NUMBER'
+            value={phone}
+            maxLength={10}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            placeholder='EMAIL'
+            value={email}
             onChange={handleChange}
             required
           />

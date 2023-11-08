@@ -1,0 +1,21 @@
+.Rate {
+    font-family: sans-serif;
+    text-align: center;
+    
+  }
+div.undefined.react-stars{
+  margin-left: 40%;
+  margin-top: 3%;
+  
+}
+i.far.fa-star{
+  color:rgb(254, 119, 0);
+}
+i.fa.fa-star-half-alt{
+  color:rgb(250, 117, 0);
+}
+i.fa.fa-star::before{
+  color:rgb(255, 122, 6);
+}
+
+  

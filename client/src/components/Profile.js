@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Profile.css';
+import {Link} from 'react-router-dom';
+import AuthContext from '../features/context/authContext';
+
 const Profile = () => {
+  const { currentUser, setCurrentUser, isLoggedIn, setIsLoggedIn } =  useContext(AuthContext);
+
+  console.log(currentUser)
+
   return (
     <div>
+    <div className="container-fluid">
+      <div className='row mob-tit'>
+      <Link to={'/home'} className="col-5"><i class="fa-solid fa-house fa-xl"></i></Link>
+        <div className='col-7'><h4 className='mob-tit mob pro'>PROFILE</h4></div>
+      </div> 
+    </div>
         <div className='prof-row'>
             <img className="user" src='user.png' width="100" height="100"></img>
             <h5 className='profile'>Profile Photo</h5>
@@ -15,7 +28,7 @@ const Profile = () => {
             </div>
             :
             <div className='col profile'>
-            <h5 className='prof'>Charan Joseph</h5>
+            <h5 className='prof'>{currentUser?.name}</h5>
             </div>
           </div>
         </div>
@@ -28,7 +41,7 @@ const Profile = () => {
             </div>
             :
             <div className='col profile'>
-            <h5 className='prof'>Charanjoseph00@gmail.com</h5>
+            <h5 className='prof'>{currentUser?.email}</h5>
             </div>
           </div>
         </div>
@@ -42,7 +55,7 @@ const Profile = () => {
             </div>
             :
             <div className='col profile'>
-            <h5 className='prof'>+91 7358425020</h5>
+            <h5 className='prof'>+91 {currentUser?.phone}</h5>
             </div>
           </div>
         </div>

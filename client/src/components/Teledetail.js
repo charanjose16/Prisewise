@@ -1,8 +1,10 @@
 import React from 'react'
 import "./Detail.css"
+import {Link} from 'react-router-dom';
 const Teledetail = () => {
   return (
     <div>
+    <Link to={'/home'} className="col-6"><i class="fa-solid fa-house fa-xl det"></i></Link>
     <div className='text-center'>
     <img className="main-img" src='tv1.png' width="370" height="260" alt='laptop-img'/>
     </div>

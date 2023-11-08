@@ -72,6 +72,7 @@ a{
 div.card.card-body{
   background-color: rgba(249, 157, 44, 0.175);
 }
+
 h3.mb-0.font-weight-semibold{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -126,9 +127,11 @@ div.footer{
   height: 50px;
   background-color:  rgba(254, 132, 26, 0.773) ;
   text-align: center;
+  
 }
 h5.copyright{
   padding-top: 15px;
+  font-weight: 300;
   color: rgb(246, 206, 153);
 }
 i{
@@ -136,4 +139,7 @@ i{
 }
 ul.dropdown-menu.text-small.shadow{
   background-color:rgb(246, 206, 153);
+}
+a.col-md-4{
+  margin-top: 5px;
 }
