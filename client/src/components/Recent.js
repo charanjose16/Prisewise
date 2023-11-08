@@ -15,15 +15,15 @@ const Recent = () => {
    <div className="container-fluid">
         <div className="row not">
           <div className="col-5 set">
-          <Link to={'/detail'} className="col-4">
+          <Link to={'/teledetail'} className="col-4">
              <div className='row'>
                  <div className='col-3 '>
-                 <img className="recent-pic" src='https://i.imgur.com/Aj0L4Wa.jpg' width="150" height="150"  alt="Apple iPhone XR"/>
+                 <img className="recent-pic" src='tv1.png' width="170" height="150"  alt="Apple iPhone XR"/>
                  </div>
                  <div className='col-4 recent'>
                 <ul classname='recent'>
-                    <li className='rec-li'>Apple iPhone XR</li>
-                    <li className='cost'>Rs.65,400</li>
+                    <li className='rec-li'>Mi Tv LED 50"</li>
+                    <li className='cost'> Rs.65,499</li>
                 </ul>
              </div>
                  <div className='col-3'>

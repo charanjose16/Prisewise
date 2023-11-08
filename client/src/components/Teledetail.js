@@ -10,7 +10,7 @@ const Teledetail = () => {
     </div>
     <h3 className='title-text'>Mi Tv LED 50"</h3>
     <div className='text-center price'>
-      <h4 className='bprice'>Best Price   <span className='rate'>  Rs.65499</span></h4>
+      <h4 className='bprice'>Best Price   <span className='rate'>  Rs.65,499</span></h4>
     </div>
     <hr></hr>
     <div className="container-fluid">
