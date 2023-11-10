@@ -54,7 +54,7 @@ const Signup = () => {
             className="form-control"
             id="username"
             name="username"
-            placeholder='USERNAME'
+            placeholder='ENTER USERNAME'
             value={username}
             onChange={handleChange}
             required
@@ -67,7 +67,7 @@ const Signup = () => {
             className="form-control"
             id="phone"
             name="phone"
-            placeholder='PHONE NUMBER'
+            placeholder='ENTER PHONE NUMBER'
             value={phone}
             maxLength={10}
             onChange={handleChange}
@@ -81,7 +81,7 @@ const Signup = () => {
             className="form-control"
             id="email"
             name="email"
-            placeholder='EMAIL'
+            placeholder='ENTER EMAIL'
             value={email}
             onChange={handleChange}
             required
@@ -95,7 +95,7 @@ const Signup = () => {
             className="form-control"
             id="password"
             name="password"
-            placeholder='PASSWORD'
+            placeholder='ENTER 6 DIGIT PASSWORD'
             value={password}
             onChange={handleChange}
             required

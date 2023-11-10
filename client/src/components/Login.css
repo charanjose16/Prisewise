@@ -83,3 +83,10 @@ button.btn.btn-primary.log-sign-button{
   width:600px;
 
 }
+div.reg{
+  margin-left: 660px;
+  margin-top: 20px;
+}
+a.reg{
+  color: rgb(254, 131, 0);
+}

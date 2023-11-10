@@ -73,6 +73,10 @@ const Login = () => {
           LOGIN
         </button>
       </form>
+      <div className='reg'>
+        Don't have an account?<a href="/signup" className='reg'> Sign up here.</a>
+      </div>
+      
     </div>
   );
 };
