@@ -3,7 +3,11 @@ import './Home.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { getMobiles } from '../features/firebase/mobilesDB';
 
+
+
 const Home = () => {
+  
+
   const inputRef = useRef(null);
   const navigate = useNavigate()
   
@@ -85,9 +89,9 @@ const Home = () => {
             <img className="homepage-logo" src="logo.png" alt="" width="25" height="28" />
           </div>
           <div className="col-1 pricewise">
-            <h6>PriceWise</h6>
+            <h6 className='pw'>PriceWise</h6>
           </div>
-          <div className="col-6">
+          <div className="col-4">
             <input ref={inputRef}  type="search" id="form1" className="form-control" placeholder="Search" />
           </div>
           <div className="col-1">

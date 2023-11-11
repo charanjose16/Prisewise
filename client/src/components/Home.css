@@ -10,12 +10,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
   input#form1.form-control{
-    width: 760px;
+    width: 560px;
   }
  div.col-1.pricewise{
-   padding-left: 90px;
+   
    padding-top: 4px;
-   position: absolute;
+  
    
  }
  div.container-fluid.catogory{
@@ -99,7 +99,7 @@ div.col-1.logo.btn.float-end{
  padding-right: 50px;
 }
 img.homepage-logo{
-  margin-left: 20px;
+  margin-left: 80px;
 }
 h5.viewall{
   font-size: 1rem;
@@ -141,3 +141,18 @@ a.col-md-4{
 p.mb-3{
   color: black;
 }
+button.btn.btn-primary.search-button{
+  margin-left: 57px;
+}
+h6.pw{
+  margin-right: 30px;
+}
+i.fa-solid.fa-bell.fa-xl{
+margin-left: 80px;
+}
+i.fa-solid.fa-user.fa-xl{
+  margin-left: 80px;
+  }
+  i.fa-solid.fa-clock.fa-xl{
+    margin-left: 80px;
+    }
