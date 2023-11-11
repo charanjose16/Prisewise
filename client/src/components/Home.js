@@ -67,7 +67,7 @@ const Home = () => {
                 <i class="fa-solid fa-circle-info"></i>  <span class="ms-1 d-none d-sm-inline">About</span> </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-truncate">
+              <a href="/coupons" class="nav-link text-truncate">
                 <i class="fa-solid fa-gift"></i>  <span class="ms-1 d-none d-sm-inline">My Coupons</span> </a>
             </li>
             <li>

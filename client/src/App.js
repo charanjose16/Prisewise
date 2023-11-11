@@ -22,6 +22,7 @@ import Recent from './components/Recent';
 import Viewall from './components/Viewall';
 import Contact from './components/Contact';
 import Rate from './components/Rate';
+import Coupons from './components/Coupons';
 import { About } from './components/About';
 import {AuthProvider} from './features/context/authContext';
 
@@ -59,6 +60,7 @@ function App() {
           <Route path='/contact'  element={<Contact/>} />
           <Route path='/rate'  element={<Rate/>} />
           <Route path='/about'  element={<About/>} />
+          <Route path='/coupons'  element={<Coupons/>} />
 
 
         </Routes>
