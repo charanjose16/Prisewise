@@ -80,7 +80,7 @@ const Home = () => {
 
       <div className="container-fluid">
         <div className="row">
-          <div className="col-1 logo btn float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" typeof='button' aria-label="Close">
+          <div className="col-1 logo float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" typeof='button' aria-label="Close">
 
             <i className="fa-solid fa-bars fa-xl" />
 

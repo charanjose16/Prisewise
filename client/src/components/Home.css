@@ -99,6 +99,7 @@ div.col-1.logo.btn.float-end{
  padding-right: 50px;
 }
 img.homepage-logo{
+  margin-top: 3px;
   margin-left: 80px;
 }
 h5.viewall{
@@ -149,10 +150,17 @@ h6.pw{
 }
 i.fa-solid.fa-bell.fa-xl{
 margin-left: 80px;
+margin-top: 18px;
 }
 i.fa-solid.fa-user.fa-xl{
   margin-left: 80px;
+  margin-top: 18px;
   }
   i.fa-solid.fa-clock.fa-xl{
     margin-left: 80px;
+    margin-top: 18px;
     }
+  i.fa-solid.fa-bars.fa-xl{
+    margin-top: 18px;
+    margin-left: 20px;
+  }
