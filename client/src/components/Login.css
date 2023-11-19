@@ -60,12 +60,15 @@ body{
   
   .logobox {
     margin-bottom: 60px;
-    padding: 50px 550px;
+    padding: 20px 550px;
 
   }
   
   .login {
     text-align: center;
+  }
+  h2.login{
+   bottom: 30px;
   }
   
   .form-group {
@@ -89,4 +92,7 @@ div.reg{
 }
 a.reg{
   color: rgb(254, 131, 0);
+}
+div.col-6.lap{
+  
 }

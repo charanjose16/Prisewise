@@ -50,7 +50,7 @@ const Login = () => {
             className="form-control"
             id="email"
             name="email"
-            placeholder='EMAIL'
+            placeholder='Email'
             value={email}
             onChange={handleChange}
             required
@@ -63,7 +63,7 @@ const Login = () => {
             className="form-control"
             id="password"
             name="password"
-            placeholder='PASSWORD'
+            placeholder='Password'
             value={password}
             onChange={handleChange}
             required

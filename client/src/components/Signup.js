@@ -54,7 +54,7 @@ const Signup = () => {
             className="form-control"
             id="username"
             name="username"
-            placeholder='ENTER USERNAME'
+            placeholder='Enter Username'
             value={username}
             onChange={handleChange}
             required
@@ -67,7 +67,7 @@ const Signup = () => {
             className="form-control"
             id="phone"
             name="phone"
-            placeholder='ENTER PHONE NUMBER'
+            placeholder='Enter Phone Number'
             value={phone}
             maxLength={10}
             onChange={handleChange}
@@ -81,7 +81,7 @@ const Signup = () => {
             className="form-control"
             id="email"
             name="email"
-            placeholder='ENTER EMAIL'
+            placeholder='Enter Email'
             value={email}
             onChange={handleChange}
             required
@@ -95,7 +95,7 @@ const Signup = () => {
             className="form-control"
             id="password"
             name="password"
-            placeholder='ENTER 6 DIGIT PASSWORD'
+            placeholder='Enter 6 digit Password'
             value={password}
             onChange={handleChange}
             required
@@ -104,7 +104,11 @@ const Signup = () => {
         <button type="submit" className="btn btn-primary log-sign-button">
            SIGNUP
         </button>
+
       </form>
+      <div className='log'>
+        Already a user? <a href="/login" className='reg'> Login here.</a>
+      </div>
     </div>
    
   );

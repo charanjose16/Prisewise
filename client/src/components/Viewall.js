@@ -33,7 +33,7 @@ const Viewall = () => {
           <Link to={'/earphones'} className="col-4">
              <div className='row'>
                  <div className='col-3 '>
-                 <img className="main-img fri1 " src='e1.png' width="115" height="150"  alt="Apple iPhone XR" />
+                 <img className="main-img  " src='e1.png' width="115" height="150"  alt="Apple iPhone XR" />
                  </div>
                  <div className='col-6'>
                 <h4 className='cat-tag'>Earphones</h4>
@@ -82,7 +82,7 @@ const Viewall = () => {
           <Link to={'/televisions'} className="col-4">
              <div className='row'>
                  <div className='col-3 '>
-                 <img className="main-img lap1 tv" src='tv1.png' width="170" height="130"  alt="Apple iPhone XR"/>
+                 <img className="main-img lap11 tv" src='tv1.png' width="170" height="130"  alt="Apple iPhone XR"/>
                  </div>
                  <div className='col-6'>
                 <h4 className='cat-tag'>Televisions</h4>
@@ -98,7 +98,7 @@ const Viewall = () => {
           <Link to={'/fridge'} className="col-4">
              <div className='row'>
                  <div className='col-3 '>
-                 <img className="main-img fri1 fri" src='fri1.png' width="77" height="150"  alt="Apple iPhone XR" />
+                 <img className="main-img fri11 fri" src='fri1.png' width="77" height="150"  alt="Apple iPhone XR" />
                  </div>
                  <div className='col-6'>
                 <h4 className='cat-tag'>Fridge</h4>

@@ -44,7 +44,7 @@ body {
     text-align: center;
   }
   .signupbox{
-    margin-top: 40px;
+    margin-top: 5px;
   }
   .btn-primary{
     background-color:rgb(252, 118, 0)!important;
@@ -69,7 +69,7 @@ body {
     font-family: 'Kaushan Script';font-size: 22px;
   }
   .logobox{
-    margin-bottom: 60px;
+    margin-bottom: 10px;
   }
   .login{
         text-align: center;
@@ -99,4 +99,16 @@ body {
   button{
     background-color:rgb(252, 118, 0) ;
   }
-  
+  input[type="email" ]::placeholder {
+    text-align: left;
+}
+input[type="password" ]::placeholder {
+  text-align: left;
+}
+input[type="text" ]::placeholder {
+  text-align: left;
+}
+div.log{
+  margin-left: 670px;
+  margin-top: 20px;
+}

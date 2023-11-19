@@ -43,7 +43,7 @@ const Recent = () => {
           <Link to={'/eardetail'} className="col-4">
           <div className='row'>
                  <div className='col-3 '>
-                 <img className="main-img fri1 " src='e1.png' width="115" height="150"  alt="Apple iPhone XR" />
+                 <img className="main-img  " src='e1.png' width="115" height="150"  alt="Apple iPhone XR" />
                  </div>
                  <div className='col-4 recent'>
                 <ul classname='recent'>

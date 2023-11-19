@@ -27,9 +27,9 @@ const Mobiles = () => {
         {mobiles?.map((data)=>(
 
 
-                 <div className="row">
+          <div className="row">
           <Link to="/detail" state={data} className="col-4">
-          <img className="main-img" src={data.image} width="200" height="200" style={{objectFit:"contain"}} alt="Apple iPhone XR"/>
+          <img className="main-img mobi" src={data.image} width="200" height="200" style={{objectFit:"contain"}} alt="Apple iPhone XR"/>
           </Link>
           <div className='col-4'>
           <h4 className='title-text'>{data.name}</h4>
