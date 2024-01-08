@@ -1,0 +1,51 @@
+.start-bgs{
+    opacity: 0.5;
+}
+div.start-container{
+    position: relative;
+    background-color: rgb(255, 255, 255) !important;
+    
+}
+h1.start-head{
+    position: absolute;
+    bottom: 510px;
+    font-weight:bolder;
+    left: 660px;
+    color: whitesmoke;
+    text-shadow:  2px 2px 8px grey;
+}
+p.start-p{
+    position: absolute;
+    bottom: 430px;
+    left: 350px;   
+    font-size:larger;
+    font-weight: 700;
+    color:rgba(5, 3, 0, 0.801);
+    text-shadow:  2px 4px 10px grey;
+}
+div.button-cont{
+    position:absolute;
+    bottom: 230px; 
+}
+button.start-btn{
+    background-color: rgba(254, 131, 0, 0.371);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-shadow:  2px 4px 10px grey;
+    box-shadow:  2px 4px 10px grey;
+    font-weight: 600;
+    border-radius: 5px;
+}
+button.start-btn:hover{
+    background-color: rgba(121, 82, 14, 0.796);
+}
+div.col-2.btn-1{
+    margin-left: 550px;
+}
+div.start-log{
+    position: absolute;
+    bottom: 600px;
+    left: 690px;
+}

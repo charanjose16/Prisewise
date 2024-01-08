@@ -121,14 +121,14 @@ span.ms-1.d-none.d-sm-inline{
 }
 div.footer{
   height: 50px;
-  background-color:  rgba(254, 132, 26, 0.773) ;
+  background-color:  rgba(250, 165, 90, 0.773) ;
   text-align: center;
   
 }
 h5.copyright{
   padding-top: 15px;
-  font-weight: 300;
-  color: rgb(246, 206, 153);
+  font-weight: 400;
+  color: rgba(252, 230, 209, 0.932);
 }
 i{
   color: black;

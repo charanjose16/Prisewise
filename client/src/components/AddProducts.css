@@ -1,0 +1,29 @@
+h3.admin-pw{
+    font-size:medium;
+    margin-right: 30px;
+}
+input.col-5.add-pr{
+    margin-left: 430px;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+div.adm-but-sub{
+    margin-left: 430px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+select.col-5.add-pr{
+    margin-left: 430px;
+    border-color: black;
+    border-width: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+}
+/* select#products.col-5.add-pr{
+    color: grey;
+} */
+

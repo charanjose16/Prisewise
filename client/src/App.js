@@ -25,6 +25,10 @@ import Rate from './components/Rate';
 import Coupons from './components/Coupons';
 import { About } from './components/About';
 import {AuthProvider} from './features/context/authContext';
+import StartPage from './components/StartPage';
+import AddProducts from './components/AddProducts';
+import AdminLogin from './components/AdminLogin';
+
 
 
 function App() {
@@ -36,7 +40,7 @@ function App() {
       value={{ isLoggedIn, setIsLoggedIn, currentUser, setCurrentUser }}
     >
         <Routes>
-         <Route path="/" element={<Login/>} />
+         <Route path="/" element={<StartPage/>} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path='/home'  element={<Home/>} />
@@ -61,6 +65,11 @@ function App() {
           <Route path='/rate'  element={<Rate/>} />
           <Route path='/about'  element={<About/>} />
           <Route path='/coupons'  element={<Coupons/>} />
+          <Route path='/startpage'  element={<StartPage/>} />
+          <Route path='/add'  element={<AddProducts/>} />
+          <Route path='/admin'  element={<AdminLogin/>} />
+
+      
 
 
         </Routes>
