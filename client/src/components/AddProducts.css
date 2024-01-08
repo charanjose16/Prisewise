@@ -26,4 +26,6 @@ select.col-5.add-pr{
 /* select#products.col-5.add-pr{
     color: grey;
 } */
-
+button.btn.btn-primary.col-7.submit-add{
+    margin-top: 10px;
+}
