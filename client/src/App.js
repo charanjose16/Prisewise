@@ -28,6 +28,8 @@ import {AuthProvider} from './features/context/authContext';
 import StartPage from './components/StartPage';
 import AddProducts from './components/AddProducts';
 import AdminLogin from './components/AdminLogin';
+import BestPrice from './components/BestPrice';
+
 
 
 
@@ -68,6 +70,7 @@ function App() {
           <Route path='/startpage'  element={<StartPage/>} />
           <Route path='/add'  element={<AddProducts/>} />
           <Route path='/admin'  element={<AdminLogin/>} />
+          <Route path='/bestOffers'  element={<BestPrice/>} />
 
       
 

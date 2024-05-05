@@ -29,7 +29,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await loginWithEmailAndPassword(email,password);
-    if(res.success){
+    if(res && res.success){
         setIsLoggedIn(true)
         setCurrentUser(res.user)
         navigate('/home');

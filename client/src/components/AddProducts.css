@@ -29,3 +29,16 @@ select.col-5.add-pr{
 button.btn.btn-primary.col-7.submit-add{
     margin-top: 10px;
 }
+.bp-main-div{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+.bp-det{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}

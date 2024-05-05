@@ -12,6 +12,7 @@ const Home = () => {
   const navigate = useNavigate()
   
   const [mobiles,setMobiles]=useState(null)
+  
   const getMobilesData = async() => {
     const res = await getMobiles();
     setMobiles(res)
